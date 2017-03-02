@@ -124,6 +124,9 @@ margin-left 100ms ease-in-out;
 	display: inline-block;
 	vertical-align: middle;
 }
+.player-bar .volume .ion-volume-mute {
+	font-size: 1.5rem;
+}
 .player-bar .volume .seek-bar {
 	display: inline-block;
 	width: 5.75rem;

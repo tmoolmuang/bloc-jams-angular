@@ -35,7 +35,7 @@
           return percent + "%";
         };
 
-        scope.fillStyle = function() {
+        scope.fillStyle = function() {          
           return {width: percentString()};
         };
         scope.thumbStyle  = function() {

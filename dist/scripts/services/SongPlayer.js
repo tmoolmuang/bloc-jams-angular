@@ -29,8 +29,19 @@
         preload: true
       });
       currentBuzzObject.bind('timeupdate', function() {
-        $rootScope.$apply(function() {
+        $rootScope.$apply(function() {          
+          if (SongPlayer.volume == null) {
+            SongPlayer.volume = currentBuzzObject.getVolume();            
+          }
+          else {
+            SongPlayer.setVolume(SongPlayer.volume);
+          }
           SongPlayer.currentTime = currentBuzzObject.getTime();
+          if (SongPlayer.currentTime == song.duration) {
+            setTimeout(function() {
+              SongPlayer.next();
+            }, 2000); 
+          }
         });
       });
       SongPlayer.currentSong = song;
@@ -51,6 +62,7 @@
     * @param {Object} song
     */
     var playSong = function(song) {
+      (SongPlayer.mute)?currentBuzzObject.mute():currentBuzzObject.unmute();
       currentBuzzObject.play();
       song.playing = true;
     };
@@ -75,6 +87,18 @@
     * @type {Number}
     */
     SongPlayer.currentTime = null;
+
+    /**
+    * @desc Current volume set
+    * @type {Number}
+    */
+    SongPlayer.volume = null;
+
+    /**
+    * @desc Mute status 
+    * @type {Boolean}
+    */
+    SongPlayer.mute = false;
 
      /**
     * @function play
@@ -158,6 +182,19 @@
     SongPlayer.setVolume = function(volume) {
       if (currentBuzzObject) {
         currentBuzzObject.setVolume(volume);
+        SongPlayer.volume = volume;
+      }
+    };
+
+    /**
+    * @function muteToggle
+    * @desc toggle between mute and unmute
+    * @param {Number} volume
+    */
+    SongPlayer.muteToggle = function() {
+      if (currentBuzzObject) {
+        currentBuzzObject.toggleMute();
+        SongPlayer.mute = currentBuzzObject.isMuted();
       }
     };
 
