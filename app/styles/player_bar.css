@@ -3,9 +3,10 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	height: 200px;
+	height: 100px;
 	background-color: rgba(255, 255, 255, 0.3);
 	z-index: 100;
+	border-radius: 10px;
 }
 .player-bar a {
 	font-size: 1.1rem;
@@ -124,9 +125,9 @@ margin-left 100ms ease-in-out;
 	display: inline-block;
 	vertical-align: middle;
 }
-.player-bar .volume .ion-volume-mute {
+/*.player-bar .volume .ion-volume-mute {
 	font-size: 1.5rem;
-}
+}*/
 .player-bar .volume .seek-bar {
 	display: inline-block;
 	width: 5.75rem;
