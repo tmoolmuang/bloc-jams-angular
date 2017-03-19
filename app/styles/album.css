@@ -19,13 +19,13 @@
 }
 .album-view-details .album-view-release-info {
 	font-weight: 300;
-	font-size: 0.75rem;
+	font-size: 0.9rem;
 }
 .album-view-song-list {
 	width: 90%;
 	margin: 1.5rem auto;
 	font-weight: 300;
-	font-size: 0.75em;
+	font-size: 0.9em;
 	border-collapse: collapse;
 }
 .album-view-song-item {
