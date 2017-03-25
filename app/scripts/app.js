@@ -14,7 +14,10 @@
 			.state('album', {
 				url: '/album',
 				controller: 'AlbumCtrl as album', 
-				templateUrl: '/templates/album.html'
+				templateUrl: '/templates/album.html',
+				params: {
+						album: null
+  			}
 			})
 			.state('collection', {
 				url: '/collection',

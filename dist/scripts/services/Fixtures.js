@@ -6,7 +6,7 @@
       artist: 'Pablo Picasso',
       label: 'Cubism',
       year: '1881',
-      albumArtUrl: '/assets/images/album_covers/01.png',
+      albumArtUrl: '/assets/images/album_covers/03.png',
       songs: [
         { title: 'Blue', duration: '161.71', audioUrl: '/assets/music/blue' },
         { title: 'Green', duration: '103.96', audioUrl: '/assets/music/green' },
@@ -16,30 +16,34 @@
       ]
     };
 
-    var albumMarconi = {
-      title: 'The Telephone',
-      artist: 'Guglielmo Marconi',
-      label: 'EM',
-      year: '1909',
-      albumArtUrl: '/assets/images/album_covers/20.png',
-      songs: [
-        { title: 'Hello, Operator?', duration: '1:01' },
-        { title: 'Ring, ring, ring', duration: '5:01' },
-        { title: 'Fits in your pocket', duration: '3:21' },
-        { title: 'Can you hear me now?', duration: '3:14' },
-        { title: 'Wrong phone number', duration: '2:15' }
+    var albumGx = {
+      title: 'Just For You',
+      artist: 'Grand Ex',
+      label: 'EMI',
+      year: '1984',
+      albumArtUrl: '/assets/images/album_covers/gx.jpg',
+     songs: [
+        { title: 'Dew', duration: '204.00', audioUrl: '/assets/music/_dew' },
+        { title: 'Friend', duration: '282.00', audioUrl: '/assets/music/_friend' },
+        { title: 'Purity', duration: '246.00', audioUrl: '/assets/music/_purity' },
+        { title: 'Forsaken', duration: '198.00', audioUrl: '/assets/music/_forsaken' },
+			 	{ title: 'Purity (instument)', duration: '249.00', audioUrl: '/assets/music/_purity(inst)' }
       ]
-   };
-    Fixtures.getAlbum = function() {
-      return albumPicasso;
+   	};
+		
+    Fixtures.getAlbum = function(albumIndex) {
+      // hack for 2 albums :TODO			
+			return (albumIndex == 0)?albumPicasso:albumGx;
     };
-    Fixtures.getCollection = function(numberOfAlbums) {
-      var picassoAlbums = [];
-      for (var i = 0; i < numberOfAlbums; i++) {
-         picassoAlbums.push(albumPicasso);
-      }
-      return picassoAlbums;
+    
+		Fixtures.getCollection = function() {
+			// hack for 2 albums :TODO
+			var collection = [];
+			collection.push(albumPicasso);
+			collection.push(albumGx);
+			return collection;
     };
+		
     return Fixtures;
   }
 

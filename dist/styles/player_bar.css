@@ -55,15 +55,14 @@
 	width: 100%;
 	font-weight: 300;
 }
-.player-bar .currently-playing .song-name,
-.player-bar .currently-playing .artist-song-mobile {
+.player-bar .currently-playing .song-name{
 	top: 0.8rem;
 }
 .player-bar .currently-playing .artist-name {
 	bottom: 0.8rem;
 }
 .player-bar .currently-playing .artist-song-mobile {
-	display: none;
+	display: none;	
 }
 .seek-control {
 	position: relative;
@@ -160,5 +159,9 @@ margin-left 100ms ease-in-out;
 	}
 	.player-bar .currently-playing .artist-song-mobile {
 		display: block;
+		top: -1.8rem;
 	}
+	.player-bar .seek-bar {
+		top: -0.8rem;
+	}	
 }

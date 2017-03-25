@@ -12,7 +12,17 @@
     * @desc Album information
     * @type {Object}
     */
-    var currentAlbum = Fixtures.getAlbum();
+//    var currentAlbum = Fixtures.getAlbum();
+		var currentAlbum = null;
+		
+		
+		SongPlayer.setCurrentAlbum = function(album) {
+			if (currentBuzzObject) {
+        stopSong();
+      }
+			currentAlbum = album;		
+		}	
+		
 
     /**
     * @function setSong
@@ -25,7 +35,8 @@
       }
       currentBuzzObject = new buzz.sound(song.audioUrl, {
         formats: ['mp3'],
-        preload: true
+        preload: true,
+				volume: 30
       });
       currentBuzzObject.bind('timeupdate', function() {
         $rootScope.$apply(function() {          
@@ -36,10 +47,11 @@
             SongPlayer.setVolume(SongPlayer.volume);
           }
           SongPlayer.currentTime = currentBuzzObject.getTime();
-          if (SongPlayer.currentTime == song.duration) {
+					if (SongPlayer.currentTime >= song.duration) {
+						stopSong();
             setTimeout(function() {
               SongPlayer.next();
-            }, 2000); 
+            }, 3000); 
           }
         });
       });
@@ -72,7 +84,8 @@
     * @desc Stops selecting song and sets playing property of the song to false
     */
     var stopSong = function() {
-      currentBuzzObject.stop();
+      currentBuzzObject.stop();			
+//			SongPlayer.currentSong.title = null; //
       SongPlayer.currentSong.playing = false;
       SongPlayer.currentSong.pausing = false;
     };
