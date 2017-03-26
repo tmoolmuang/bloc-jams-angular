@@ -13,17 +13,14 @@
     * @type {Object}
     */
 //    var currentAlbum = Fixtures.getAlbum();
-		var currentAlbum = null;
-		
+		var currentAlbum = null;		
 		
 		SongPlayer.setCurrentAlbum = function(album) {
 			if (currentBuzzObject) {
         stopSong();
-				currentBuzzObject = null;
       }
 			currentAlbum = album;		
-		}	
-		
+		}			
 
     /**
     * @function setSong
@@ -49,11 +46,11 @@
           }
 					if (currentBuzzObject) {						
 						SongPlayer.currentTime = currentBuzzObject.getTime();
-						if (SongPlayer.currentTime >= song.duration) {
+						if (currentBuzzObject.isEnded()) {
 							stopSong();
 							setTimeout(function() {
 								SongPlayer.next();
-							}, 3000); 
+							}, 2000); 
 						}						
 					}
         });
@@ -91,6 +88,7 @@
 			SongPlayer.currentTime = 0;
       SongPlayer.currentSong.playing = false;
       SongPlayer.currentSong.pausing = false;
+			currentBuzzObject = null;
     };
 
      /**
