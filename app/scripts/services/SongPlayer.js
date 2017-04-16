@@ -36,6 +36,11 @@
         preload: true,
 				volume: 30
       });
+			
+			if (currentBuzzObject) {	//
+				console.log("has buzz");// :TODO
+			}													//
+			
       currentBuzzObject.bind('timeupdate', function() {
         $rootScope.$apply(function() {          
           if (SongPlayer.volume == null) {
@@ -176,6 +181,7 @@
       }
       else {
         var song = currentAlbum.songs[currentSongIndex];
+				console.log("in"); // :TODO
         setSong(song);
         playSong(song);
       }

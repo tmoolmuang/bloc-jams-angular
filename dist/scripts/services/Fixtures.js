@@ -6,7 +6,7 @@
       artist: 'Pablo Picasso',
       label: 'Cubism',
       year: '1881',
-      albumArtUrl: '/assets/images/album_covers/03.png',
+      albumArtUrl: "/assets/images/album_covers/03.png",
       songs: [
         { title: 'Blue', duration: '161.71', audioUrl: '/assets/music/blue' },
         { title: 'Green', duration: '103.96', audioUrl: '/assets/music/green' },
@@ -21,8 +21,8 @@
       artist: 'Grand Ex',
       label: 'EMI',
       year: '1984',
-      albumArtUrl: '/assets/images/album_covers/gx.jpg',
-     songs: [
+      albumArtUrl: "/assets/images/album_covers/gx.jpg",
+     	songs: [
         { title: 'Dew', duration: '204.00', audioUrl: '/assets/music/_dew' },
         { title: 'Friend', duration: '282.00', audioUrl: '/assets/music/_friend' },
         { title: 'Purity', duration: '246.00', audioUrl: '/assets/music/_purity' },
@@ -32,8 +32,8 @@
    	};
 		
     Fixtures.getAlbum = function(albumIndex) {
-      // hack for 2 albums :TODO			
-			return (albumIndex == 0)?albumPicasso:albumGx;
+      // hack for 2 albums :TODO	
+			return (albumIndex == 0) ? albumPicasso : albumGx;
     };
     
 		Fixtures.getCollection = function() {
