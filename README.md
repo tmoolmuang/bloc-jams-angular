@@ -1,2 +1,2 @@
-###Bloc Jams 
+## Bloc Jams 
 A fully functional digital music player. It was first built with vanilla Javascript, then refactored with jQuery and AngularJS. Songs can be played, paused, replayed, and muted. [Buzz](http://buzz.jaysalvat.com/) library was used to support music playback.
