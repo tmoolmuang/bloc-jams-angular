@@ -6,3 +6,5 @@ The app is deployed on : http://bloc-jams.infocus.life/
 The source code is here on GitHub: https://github.com/tmoolmuang/bloc-jams-angular
 
 This app was created as part of the [Bloc](www.bloc.io) Web Developer Track.
+
+![bj](https://cloud.githubusercontent.com/assets/24881495/26013852/fb3df926-370e-11e7-9c46-bce29ac801f1.JPG)
