@@ -1,5 +1,5 @@
 (function() {
-  function SongPlayer($rootScope, Fixtures) {
+  function SongPlayer($rootScope, Fixtures, Metrics) {
     var SongPlayer = {};
 
      /**
@@ -58,6 +58,7 @@
 					}
         });
       });
+      Metrics.report(song.title);
       SongPlayer.currentSong = song;
     };
 
@@ -223,5 +224,5 @@
 
   angular
     .module('blocJams')
-    .factory('SongPlayer', ['$rootScope', 'Fixtures', SongPlayer]);
+    .factory('SongPlayer', ['$rootScope', 'Fixtures', 'Metrics', SongPlayer]);
 })();
